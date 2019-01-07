@@ -17,7 +17,7 @@ class DemoSharedPref extends StatefulWidget {
 
 class _DemoSharedPrefState extends State<DemoSharedPref> {
 
-  static final String KEY_DHARED_PREF_1 = "key1";
+  static final String keySharedPref1 = "key1";
 
   // edit controller
   final TextEditingController _controller = TextEditingController();
@@ -85,7 +85,7 @@ class _DemoSharedPrefState extends State<DemoSharedPref> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String savedData = data?? "default data";
     // save data to shared preference file
-    await prefs.setString(KEY_DHARED_PREF_1, savedData);
+    await prefs.setString(keySharedPref1, savedData);
 
   }
 
@@ -93,7 +93,7 @@ class _DemoSharedPrefState extends State<DemoSharedPref> {
     String ret = "";
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    ret = prefs.getString(KEY_DHARED_PREF_1);
+    ret = prefs.getString(keySharedPref1);
 
     return ret?? "Default data";
   }
