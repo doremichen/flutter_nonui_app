@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
            "Navigate to demo file io": (context) => FileOperator(),
            "Navigate to demo http": (context) => HttpDemo(),
+           "Navigate to demo shared preference": (context) => DemoSharedPref(),
       },
 
     );
@@ -69,10 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          padding: const EdgeInsets.only(top: 24.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               RaisedButton(
                 child: Text("Go to demo file io", style: TextStyle(fontSize: 24),),
@@ -81,13 +81,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 elevation: 12.0,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-              ),
               RaisedButton(
                 child: Text("Go to demo http", style: TextStyle(fontSize: 24),),
                 onPressed: () {
                   Navigator.pushNamed(context, "Navigate to demo http");
+                },
+                elevation: 12.0,
+              ),
+              RaisedButton(
+                child: Text("Go to demo Shared pref", style: TextStyle(fontSize: 24),),
+                onPressed: () {
+                  Navigator.pushNamed(context, "Navigate to demo shared preference");
                 },
                 elevation: 12.0,
               ),
